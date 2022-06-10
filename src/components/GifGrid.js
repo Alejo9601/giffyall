@@ -1,13 +1,20 @@
 import Gif from "./Gif";
+import getGifs from "../services/getGifs";
+import { useEffect, useState } from "react";
+import ListOfGifs from "./ListOfGifs";
 
 const GifGrid = () => {
-  const gifs = getGifs();
+  const [gifs, setGifs] = useState([]);
+
+  useEffect(() => {
+    let data = getGifs("hulk");
+    setGifs(data);
+  }, []);
+
   return (
-    <div className="grid-container">
-      {gifs.map((gif) => {
-        return <Gif key={gif.id} gifSrc={gif.image} gifName={gif.name}></Gif>;
-      })}
-    </div>
+    <section className="grid-container">
+      {gifs.length !== 0 ? <ListOfGifs gifs={gifs} /> : null}
+    </section>
   );
 };
 
