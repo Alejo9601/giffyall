@@ -1,0 +1,1 @@
+export const getGifs = (termToSearch) => {};
