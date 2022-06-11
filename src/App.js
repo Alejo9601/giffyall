@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const GifApp = styled.div`
   background-color: #5b4b8a;
+  min-width: 100vw;
 `;
 
 function App() {
