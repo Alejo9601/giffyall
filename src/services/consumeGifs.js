@@ -1,9 +1,9 @@
-const getGifs = (termToSearch) => {
+const getGifs = (termToSearch, osffsetParam) => {
   const baseUrl = "https://api.giphy.com/v1/gifs/search";
   const apiKey = "?api_key=FlQhEsM9VzKUZb1Zx4XT2IRUTygAEOs2";
   const toSearch = `&q=${termToSearch}`;
   const limit = "&limit=25";
-  const offset = "&offset=0";
+  const offset = `&offset=${osffsetParam}`;
   const rating = "&rating=g";
   const lang = "&lang=en";
   const url = baseUrl + apiKey + toSearch + limit + offset + rating + lang;
