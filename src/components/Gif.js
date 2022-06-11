@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 const GifContainer = styled.div`
-  margin: 10px;
+  margin: 5px;
+  padding: 5px;
+  /* border: 1px solid black; */
 `;
 const Figure = styled.figure`
   display: flex;
@@ -11,7 +13,6 @@ const Figure = styled.figure`
   figcaption {
     color: white;
     font-size: 1.2rem;
-    font-weight: bold;
   }
 `;
 const GifImg = styled.img`
