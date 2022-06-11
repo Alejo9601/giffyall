@@ -12,7 +12,7 @@ const ListOfGifs = ({ gifs }) => {
         return (
           <Gif
             key={gif.id}
-            gifSrc={gif.images.original.url}
+            gifSrc={gif.images.downsized_medium.url}
             gifTitle={gif.title}
           />
         );

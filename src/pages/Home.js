@@ -1,11 +1,7 @@
 import GifGrid from "../components/GifGrid";
 
 const Home = () => {
-  return (
-    <>
-      <GifGrid />
-    </>
-  );
+  return <GifGrid />;
 };
 
 export default Home;

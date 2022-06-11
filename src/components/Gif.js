@@ -1,11 +1,33 @@
+import styled from "styled-components";
+
+const GifContainer = styled.div`
+  margin: 10px;
+`;
+const Figure = styled.figure`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  figcaption {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+`;
+const GifImg = styled.img`
+  height: auto;
+  width: 350px;
+  object-fit: cover;
+`;
+
 const Gif = ({ gifSrc, gifTitle }) => {
   return (
-    <div className="container" id="gif">
-      <figure>
-        <img src={gifSrc} alt={gifTitle}></img>
+    <GifContainer className="container" id="gif">
+      <Figure>
+        <GifImg src={gifSrc} alt={gifTitle}></GifImg>
         <figcaption>{gifTitle}</figcaption>
-      </figure>
-    </div>
+      </Figure>
+    </GifContainer>
   );
 };
 

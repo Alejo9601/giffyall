@@ -1,12 +1,15 @@
-import logo from "./logo.svg";
-import "./App.css";
 import Home from "./pages/Home";
+import styled from "styled-components";
+
+const GifApp = styled.div`
+  background-color: #4a47a3;
+`;
 
 function App() {
   return (
-    <div className="App">
+    <GifApp>
       <Home />
-    </div>
+    </GifApp>
   );
 }
 
