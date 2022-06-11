@@ -1,14 +1,21 @@
+import { useEffect } from "react";
 import Gif from "./Gif";
 
 const ListOfGifs = ({ gifs }) => {
+  useEffect(() => {
+    console.log(gifs);
+  }, [gifs]);
+
   return (
     <>
       {gifs.map((gif) => {
-        <Gif
-          key={gif.id}
-          gifSrc={gif.images.original.url}
-          gifName={gif.title}
-        />;
+        return (
+          <Gif
+            key={gif.id}
+            gifSrc={gif.images.original.url}
+            gifTitle={gif.title}
+          />
+        );
       })}
     </>
   );

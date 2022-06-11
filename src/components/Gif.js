@@ -1,9 +1,9 @@
-const Gif = ({ gifSrc, gifName }) => {
+const Gif = ({ gifSrc, gifTitle }) => {
   return (
     <div className="container" id="gif">
       <figure>
-        <img src={gifSrc} alt={gifName}></img>
-        <figcaption>{gifName}</figcaption>
+        <img src={gifSrc} alt={gifTitle}></img>
+        <figcaption>{gifTitle}</figcaption>
       </figure>
     </div>
   );

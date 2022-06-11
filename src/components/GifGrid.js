@@ -1,4 +1,3 @@
-import Gif from "./Gif";
 import getGifs from "../services/getGifs";
 import { useEffect, useState } from "react";
 import ListOfGifs from "./ListOfGifs";
@@ -7,8 +6,10 @@ const GifGrid = () => {
   const [gifs, setGifs] = useState([]);
 
   useEffect(() => {
-    let data = getGifs("hulk");
-    setGifs(data);
+    getGifs("hulk").then((res) => {
+      const { data } = res;
+      setGifs(data);
+    });
   }, []);
 
   return (
