@@ -4,6 +4,9 @@ const GifContainer = styled.div`
   margin: 5px;
   padding: 5px;
   /* border: 1px solid black; */
+  :first-child {
+    margin-top: 50px;
+  }
 `;
 const Figure = styled.figure`
   display: flex;
@@ -13,12 +16,14 @@ const Figure = styled.figure`
   figcaption {
     color: white;
     font-size: 1.2rem;
+    margin-top: 5px;
   }
 `;
 const GifImg = styled.img`
   height: auto;
   width: 350px;
   object-fit: cover;
+  border-radius: 5px;
 `;
 
 const Gif = ({ gifSrc, gifTitle }) => {
