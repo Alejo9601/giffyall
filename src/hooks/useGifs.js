@@ -1,16 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import consumeGifs from "../services/consumeGifs";
 
 const useGifs = () => {
   const LIMIT_PER_QUERY = 25;
   const [gifs, setGifs] = useState([]);
-  const [offset, setOffset] = useState(0);
+  const offset = useRef(0);
 
   const getGifs = () => {
-    consumeGifs("spiderman", offset).then((res) => {
+    consumeGifs("spiderman", offset.current).then((res) => {
       const { data } = res;
       setGifs((currentGifs) => currentGifs.concat(data));
-      setOffset((prevOffset) => prevOffset + LIMIT_PER_QUERY);
+      offset.current = offset.current + LIMIT_PER_QUERY;
     });
   };
 
