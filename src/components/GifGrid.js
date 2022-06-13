@@ -5,6 +5,7 @@ import Visor from "./Visor";
 
 const GifsSection = styled.section`
   display: grid;
+  min-height: 100vh;
 `;
 
 const GifGrid = () => {

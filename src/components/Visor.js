@@ -7,8 +7,8 @@ const TopBottomVisor = styled.div`
   height: 20px;
   width: 100%;
   text-align: center;
-  background-color: transparent;
   position: relative;
+  align-self: end;
 `;
 
 const Visor = ({ toDoWhenReached }) => {
