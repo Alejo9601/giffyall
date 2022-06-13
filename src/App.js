@@ -1,5 +1,6 @@
 import Home from "./pages/Home";
 import styled from "styled-components";
+import { SearchContextProvider } from "./context/SearchContext";
 
 const GifApp = styled.div`
   background-color: #5b4b8a;
@@ -8,9 +9,11 @@ const GifApp = styled.div`
 
 function App() {
   return (
-    <GifApp>
-      <Home />
-    </GifApp>
+    <SearchContextProvider>
+      <GifApp>
+        <Home />
+      </GifApp>
+    </SearchContextProvider>
   );
 }
 

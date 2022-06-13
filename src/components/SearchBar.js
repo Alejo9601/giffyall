@@ -1,4 +1,6 @@
+import { useContext, useRef } from "react";
 import styled from "styled-components";
+import SearchContext from "../context/SearchContext";
 
 const Form = styled.form`
   display: flex;
@@ -25,9 +27,19 @@ const StyledButton = styled.input`
 `;
 
 const SearchBar = () => {
+  const { searchTerm, setSearchTerm } = useContext(SearchContext);
+  const inputRef = useRef();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(inputRef.current.value);
+    setSearchTerm(inputRef.current.value);
+  };
+
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <StyledSearchBar
+        ref={inputRef}
         type="search"
         name="search"
         placeholder="make a gif search here..."
