@@ -1,6 +1,6 @@
-import { useContext, useRef } from "react";
+import { useRef } from "react";
 import styled from "styled-components";
-import SearchContext from "../context/SearchContext";
+import { useNavigate } from "react-router-dom";
 
 const Form = styled.form`
   display: flex;
@@ -27,13 +27,12 @@ const StyledButton = styled.input`
 `;
 
 const SearchBar = () => {
-  const { searchTerm, setSearchTerm } = useContext(SearchContext);
   const inputRef = useRef();
+  const navigation = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(inputRef.current.value);
-    setSearchTerm(inputRef.current.value);
+    navigation(`/search/${inputRef.current.value}`);
   };
 
   return (

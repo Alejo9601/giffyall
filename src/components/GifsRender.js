@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Gif from "./Gif";
 
-const ListOfGifs = ({ gifs }) => {
+const GifsRender = ({ gifs }) => {
   useEffect(() => {
     console.log(gifs);
   }, [gifs]);
@@ -21,4 +21,4 @@ const ListOfGifs = ({ gifs }) => {
   );
 };
 
-export default ListOfGifs;
+export default GifsRender;

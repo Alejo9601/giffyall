@@ -9,7 +9,7 @@ const useGifs = () => {
   const { searchTerm } = useContext(SearchContext);
 
   const getGifs = () => {
-    consumeGifs(searchTerm || "spiderman", offset.current).then((res) => {
+    consumeGifs(searchTerm, offset.current).then((res) => {
       const { data } = res;
       setGifs((currentGifs) => currentGifs.concat(data));
       offset.current = offset.current + LIMIT_PER_QUERY;
@@ -18,7 +18,12 @@ const useGifs = () => {
 
   useEffect(() => {
     getGifs();
-  }, []);
+    return () => {
+      setGifs([]);
+      offset.current = 0;
+      console.log("me desmonte");
+    };
+  }, [searchTerm]);
 
   return { gifs, getGifs };
 };

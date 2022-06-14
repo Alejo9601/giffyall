@@ -1,4 +1,4 @@
-import ListOfGifs from "./ListOfGifs";
+import GifsRender from "./GifsRender";
 import styled from "styled-components";
 import useGifs from "../hooks/useGifs";
 import Visor from "./Visor";
@@ -13,8 +13,12 @@ const GifGrid = () => {
 
   return (
     <GifsSection>
-      {gifs.length !== 0 ? <ListOfGifs gifs={gifs} /> : null}
-      <Visor toDoWhenReached={getGifs} />
+      {gifs.length !== 0 ? (
+        <>
+          <GifsRender gifs={gifs} />
+          <Visor toDoWhenReached={getGifs} />
+        </>
+      ) : null}
     </GifsSection>
   );
 };
