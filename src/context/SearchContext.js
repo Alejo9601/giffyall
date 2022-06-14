@@ -3,7 +3,7 @@ import { Children, Context, createContext, useState } from "react";
 const SearchContext = createContext();
 
 const SearchContextProvider = ({ children }) => {
-  const [searchTerm, setSearchTerm] = useState();
+  const [searchTerm, setSearchTerm] = useState("javascript");
 
   const data = { searchTerm, setSearchTerm };
 
