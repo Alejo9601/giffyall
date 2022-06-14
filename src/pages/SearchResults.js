@@ -14,7 +14,6 @@ const SearchResults = () => {
 
   return (
     <>
-      S
       <Header />
       <GifGrid />
     </>
