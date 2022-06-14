@@ -14,7 +14,7 @@ const TopBottomVisor = styled.div`
 const Visor = ({ toDoWhenReached }) => {
   const toObserve = useRef();
   const [observer, setElements, entries] = useObserver({
-    threshold: 1,
+    rootMargin: "200px",
     root: null,
   });
 
