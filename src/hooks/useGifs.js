@@ -1,15 +1,13 @@
-import { useContext, useEffect, useRef, useState } from "react";
-import SearchContext from "../context/SearchContext";
+import { useEffect, useRef, useState } from "react";
 import consumeGifs from "../services/consumeGifs";
 
-const useGifs = () => {
+const useGifs = (gifsFor) => {
   const LIMIT_PER_QUERY = 25;
   const [gifs, setGifs] = useState([]);
   const offset = useRef(0);
-  const { searchTerm } = useContext(SearchContext);
 
   const getGifs = () => {
-    consumeGifs(searchTerm, offset.current).then((res) => {
+    consumeGifs(gifsFor, offset.current).then((res) => {
       const { data } = res;
       setGifs((currentGifs) => currentGifs.concat(data));
       offset.current = offset.current + LIMIT_PER_QUERY;
@@ -19,11 +17,10 @@ const useGifs = () => {
   useEffect(() => {
     getGifs();
     return () => {
-      setGifs([]);
       offset.current = 0;
-      console.log("me desmonte");
+      setGifs([]);
     };
-  }, [searchTerm]);
+  }, [gifsFor]);
 
   return { gifs, getGifs };
 };

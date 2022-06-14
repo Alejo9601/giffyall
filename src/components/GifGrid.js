@@ -8,8 +8,8 @@ const GifsSection = styled.section`
   min-height: 100vh;
 `;
 
-const GifGrid = () => {
-  const { gifs, getGifs } = useGifs();
+const GifGrid = ({ gifsFor }) => {
+  const { gifs, getGifs } = useGifs(gifsFor);
 
   return (
     <GifsSection>

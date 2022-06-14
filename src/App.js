@@ -1,6 +1,5 @@
 import Home from "./pages/Home";
 import styled from "styled-components";
-import { SearchContextProvider } from "./context/SearchContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SearchResults from "./pages/SearchResults";
 
@@ -12,14 +11,12 @@ const GifApp = styled.div`
 function App() {
   return (
     <BrowserRouter>
-      <SearchContextProvider>
-        <GifApp>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/search/:term" element={<SearchResults />} />
-          </Routes>
-        </GifApp>
-      </SearchContextProvider>
+      <GifApp>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/search/:term" element={<SearchResults />} />
+        </Routes>
+      </GifApp>
     </BrowserRouter>
   );
 }
