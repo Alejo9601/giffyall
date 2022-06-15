@@ -12,11 +12,16 @@ const Form = styled.form`
 `;
 const StyledSearchBar = styled.input`
   width: 290px;
+  padding: 0px 25px;
   height: 50px;
   font-size: 1.2rem;
   text-align: center;
   border: 0;
   outline: none;
+
+  @media (min-width: 800px) {
+    width: 600px;
+  }
 `;
 const StyledButton = styled.input`
   background-color: #34b3f1;
