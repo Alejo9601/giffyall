@@ -3,10 +3,7 @@ import styled from "styled-components";
 const GifContainer = styled.div`
   margin: 5px;
   padding: 5px;
-  /* border: 1px solid black; */
-  :first-child {
-    margin-top: 50px;
-  }
+  align-self: center;
 `;
 const Figure = styled.figure`
   display: flex;
