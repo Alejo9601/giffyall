@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <>
       <Header />
-      <GifGrid />
+      <GifGrid gifsFor="marvel" />
     </>
   );
 };
