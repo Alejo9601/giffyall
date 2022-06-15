@@ -8,6 +8,7 @@ const GifsSection = styled.section`
   min-height: 100vh;
   margin-top: 50px;
   align-self: center;
+  grid-template-rows: masonry;
 
   @media (min-width: 800px) {
     grid-template-columns: 400px 400px;
