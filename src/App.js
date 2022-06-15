@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SearchResults from "./pages/SearchResults";
 
 const GifApp = styled.div`
-  background-color: #5b4b8a;
   min-width: 100vw;
   display: flex;
   flex-direction: column;
