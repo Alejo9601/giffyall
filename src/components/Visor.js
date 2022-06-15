@@ -6,9 +6,15 @@ import styled from "styled-components";
 const TopBottomVisor = styled.div`
   height: 20px;
   width: 100%;
-  text-align: center;
   position: relative;
   align-self: end;
+
+  @media (min-width: 800px) {
+    grid-column: span 2;
+  }
+  @media (min-width: 1366px) {
+    grid-column: span 3;
+  }
 `;
 
 const Visor = ({ toDoWhenReached }) => {
