@@ -6,7 +6,6 @@ import styled from "styled-components";
 const TrendingSearchesSection = styled.section`
   display: flex;
   flex-wrap: wrap;
-  background-color: aliceblue;
   width: 700px;
   margin-top: 50px;
   align-self: center;
