@@ -6,7 +6,7 @@ import styled from "styled-components";
 const TrendingSearchesSection = styled.section`
   display: flex;
   flex-direction: column;
-  margin: 30px auto 0 auto;
+  margin: 50px auto 0 auto;
 
   h1 {
     color: white;
