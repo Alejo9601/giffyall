@@ -18,7 +18,7 @@ const HomeTitle = styled.h1`
 const Header = () => {
   return (
     <HeaderSection>
-      <HomeTitle>Giffall</HomeTitle>
+      <HomeTitle>Giffyall</HomeTitle>
       <SearchBar />
     </HeaderSection>
   );
