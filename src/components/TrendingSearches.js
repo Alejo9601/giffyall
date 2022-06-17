@@ -5,10 +5,20 @@ import styled from "styled-components";
 
 const TrendingSearchesSection = styled.section`
   display: flex;
+  flex-direction: column;
+  margin: 30px auto 0 auto;
+
+  h1 {
+    color: white;
+    font-size: 1.8rem;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+`;
+
+const Wrapper = styled.div`
+  display: flex;
   flex-wrap: wrap;
-  width: 700px;
-  margin-top: 50px;
-  align-self: center;
+  width: 350px;
 `;
 
 const TrendingSearches = () => {
@@ -20,9 +30,12 @@ const TrendingSearches = () => {
 
   return (
     <TrendingSearchesSection>
-      {trendingSearches.map((trendingTerm) => {
-        return <TrendingTerm text={trendingTerm} />;
-      })}
+      <h1>Trending Gifs...</h1>
+      <Wrapper>
+        {trendingSearches.map((trendingTerm) => {
+          return <TrendingTerm text={trendingTerm} />;
+        })}
+      </Wrapper>
     </TrendingSearchesSection>
   );
 };
