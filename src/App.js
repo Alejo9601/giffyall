@@ -15,6 +15,7 @@ function App() {
       <GifApp>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/search/:term" element={<SearchResults />} />
         </Routes>
       </GifApp>
