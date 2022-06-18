@@ -1,4 +1,6 @@
+import { useRef } from "react";
 import styled from "styled-components";
+import useRandomColor from "../hooks/useRandomColor";
 
 const GifContainer = styled.div`
   margin: 5px;
@@ -21,13 +23,31 @@ const GifImg = styled.img`
   width: 350px;
   object-fit: cover;
   border-radius: 5px;
+  border: 3px solid transparent;
 `;
 
 const Gif = ({ gifSrc, gifTitle }) => {
+  const lineColor = useRandomColor();
+  const imgRef = useRef();
+
+  const handleMouseOver = () => {
+    imgRef.current.style.border = `3px solid ${lineColor}`;
+  };
+
+  const handleMouseLeave = () => {
+    imgRef.current.style.border = `3px solid transparent`;
+  };
+
   return (
     <GifContainer className="container" id="gif">
       <Figure>
-        <GifImg src={gifSrc} alt={gifTitle}></GifImg>
+        <GifImg
+          ref={imgRef}
+          onMouseEnter={handleMouseOver}
+          onMouseLeave={handleMouseLeave}
+          src={gifSrc}
+          alt={gifTitle}
+        ></GifImg>
         <figcaption>{gifTitle}</figcaption>
       </Figure>
     </GifContainer>
