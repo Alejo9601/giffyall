@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import styled from "styled-components";
+import { trimText } from "../helpers/trimText";
 import useRandomColor from "../hooks/useRandomColor";
 
 const GifContainer = styled.div`
@@ -46,9 +47,9 @@ const Gif = ({ gifSrc, gifTitle }) => {
           onMouseEnter={handleMouseOver}
           onMouseLeave={handleMouseLeave}
           src={gifSrc}
-          alt={gifTitle}
+          alt={trimText(gifTitle, 25)}
         ></GifImg>
-        <figcaption>{gifTitle}</figcaption>
+        <figcaption>{trimText(gifTitle, 25)}</figcaption>
       </Figure>
     </GifContainer>
   );
