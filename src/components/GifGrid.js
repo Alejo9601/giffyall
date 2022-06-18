@@ -2,6 +2,7 @@ import GifsRender from "./GifsRender";
 import styled from "styled-components";
 import useGifs from "../hooks/useGifs";
 import Visor from "./Visor";
+import GifsTitle from "./GifsTitle";
 
 const GifsSection = styled.section`
   display: grid;
@@ -24,6 +25,7 @@ const GifGrid = ({ gifsFor }) => {
 
   return (
     <GifsSection>
+      <GifsTitle title={gifsFor}></GifsTitle>
       {gifs.length !== 0 ? (
         <>
           <GifsRender gifs={gifs} />
