@@ -37,7 +37,12 @@ const SearchBar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigation(`/search/${inputRef.current.value}`);
+    const value = inputRef.current.value;
+    if (value === "") {
+      alert("You can't make an empty search");
+      return;
+    }
+    navigation(`/search/${value}`);
   };
 
   return (
