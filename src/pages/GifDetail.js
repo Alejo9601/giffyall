@@ -5,7 +5,25 @@ import useSingleGif from "../hooks/useSingleGif";
 
 const DetailSection = styled.section`
   flex-grow: 1;
-  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Wrapper = styled.div``;
+
+const Figure = styled.figure`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  figcaption {
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 5px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
 `;
 
 const GifDetail = () => {
@@ -14,16 +32,16 @@ const GifDetail = () => {
 
   return (
     <DetailSection>
-      <div>
+      <Wrapper>
         {typeof gif !== "undefined" ? (
-          <figure>
+          <Figure>
             <img src={gif.images.original.url} />
             <figcaption>{gif.title}</figcaption>
-          </figure>
+          </Figure>
         ) : (
           <Loader />
         )}
-      </div>
+      </Wrapper>
     </DetailSection>
   );
 };
