@@ -10,8 +10,10 @@ const StyledDiv = styled.div`
   padding: 0px 8px;
 
   a {
+    display: block;
     text-decoration: none;
     color: white;
+    padding: 1px 1px 4px 1px;
   }
 `;
 const TrendingTerm = ({ text }) => {
