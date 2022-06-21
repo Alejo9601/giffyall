@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import Loader from "../components/Loader";
-import useSingleGif from "../hooks/useSingelGif";
+import useSingleGif from "../hooks/useSingleGif";
 
 const DetailSection = styled.section`
   flex-grow: 1;
