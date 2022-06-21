@@ -12,6 +12,7 @@ const GifsRender = ({ gifs }) => {
         return (
           <Gif
             key={gif.id}
+            gifId={gif.id}
             gifSrc={gif.images.downsized_medium.url}
             gifTitle={gif.title}
           />
