@@ -13,10 +13,15 @@ const Figure = styled.figure`
   flex-direction: column;
   align-items: center;
 
+  :hover {
+    cursor: pointer;
+  }
+
   figcaption {
     color: white;
     font-size: 1.2rem;
     margin-top: 5px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
 `;
 const GifImg = styled.img`
@@ -41,14 +46,8 @@ const Gif = ({ gifSrc, gifTitle }) => {
 
   return (
     <GifContainer className="container" id="gif">
-      <Figure>
-        <GifImg
-          ref={imgRef}
-          onMouseEnter={handleMouseOver}
-          onMouseLeave={handleMouseLeave}
-          src={gifSrc}
-          alt={trimText(gifTitle, 25)}
-        ></GifImg>
+      <Figure onMouseEnter={handleMouseOver} onMouseLeave={handleMouseLeave}>
+        <GifImg ref={imgRef} src={gifSrc} alt={trimText(gifTitle, 25)}></GifImg>
         <figcaption>{trimText(gifTitle, 25)}</figcaption>
       </Figure>
     </GifContainer>
