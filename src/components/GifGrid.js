@@ -21,14 +21,14 @@ const GifsSection = styled.section`
 `;
 
 const GifGrid = ({ gifsFor }) => {
-  const { gifs, getGifs } = useGifs(gifsFor);
+  const { allGifs, getGifs } = useGifs(gifsFor);
 
   return (
     <GifsSection>
       <GifsTitle title={gifsFor}></GifsTitle>
-      {gifs.length !== 0 ? (
+      {allGifs.length !== 0 ? (
         <>
-          <GifsRender gifs={gifs} />
+          <GifsRender gifs={allGifs} />
           <Visor toDoWhenReached={getGifs} />
         </>
       ) : null}

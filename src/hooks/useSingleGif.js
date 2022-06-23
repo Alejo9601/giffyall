@@ -1,14 +1,13 @@
-import { useEffect, useState } from "react";
-import getSingleGif from "../services/consumeSingleGif";
+import { useContext, useEffect, useState } from "react";
+import GifsContext from "../context/GifsContext";
 
 const useSingleGif = (param) => {
-  const [gif, setGif] = useState();
+  const [gif, setGif] = useState({});
+  const { allGifs, addNewGifs, cleanGifs } = useContext(GifsContext);
 
   useEffect(() => {
-    getSingleGif(param).then((res) => {
-      const { data } = res;
-      setGif(data);
-    });
+    let [singleGif] = allGifs.filter((gif) => gif.id === param);
+    setGif(singleGif);
   }, []);
 
   return gif;

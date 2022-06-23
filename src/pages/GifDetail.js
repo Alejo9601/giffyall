@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import Loader from "../components/Loader";
@@ -33,9 +34,9 @@ const GifDetail = () => {
   return (
     <DetailSection>
       <Wrapper>
-        {typeof gif !== "undefined" ? (
+        {Object.keys(gif).length !== 0 ? (
           <Figure>
-            <img src={gif.images.original.url} />
+            <img src={gif.images.downsized_medium.url} />
             <figcaption>{gif.title}</figcaption>
           </Figure>
         ) : (
