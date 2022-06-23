@@ -1,7 +1,12 @@
-import { useEffect } from "react";
 import useTrendingSearches from "../hooks/useTrendingSearches";
 import TrendingTerm from "./TrendingTerm";
 import styled from "styled-components";
+
+const StyledDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  position: relative;
+`;
 
 const TrendingSearchesSection = styled.section`
   display: flex;
@@ -12,6 +17,10 @@ const TrendingSearchesSection = styled.section`
     color: white;
     font-size: 1.8rem;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  @media (min-width: 1366px) {
+    position: fixed;
   }
 `;
 
@@ -25,14 +34,16 @@ const TrendingSearches = () => {
   const { trendingSearches } = useTrendingSearches();
 
   return (
-    <TrendingSearchesSection>
-      <h1>Trending Gifs...</h1>
-      <Wrapper>
-        {trendingSearches.map((trendingTerm) => {
-          return <TrendingTerm text={trendingTerm} />;
-        })}
-      </Wrapper>
-    </TrendingSearchesSection>
+    <StyledDiv>
+      <TrendingSearchesSection>
+        <h1>Trending Gifs...</h1>
+        <Wrapper>
+          {trendingSearches.map((trendingTerm) => {
+            return <TrendingTerm text={trendingTerm} />;
+          })}
+        </Wrapper>
+      </TrendingSearchesSection>
+    </StyledDiv>
   );
 };
 
