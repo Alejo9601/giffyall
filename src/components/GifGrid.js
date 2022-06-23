@@ -25,7 +25,7 @@ const GifGrid = ({ gifsFor }) => {
 
   return (
     <GifsSection>
-      <GifsTitle title={gifsFor}></GifsTitle>
+      <GifsTitle title={gifsFor || "Random GIFS for you"}></GifsTitle>
       {allGifs.length !== 0 ? (
         <>
           <GifsRender gifs={allGifs} />

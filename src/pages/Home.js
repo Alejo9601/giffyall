@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <HomeSection>
       <TrendingSearches />
-      <GifGrid gifsFor="marvel" />
+      <GifGrid />
     </HomeSection>
   );
 };
