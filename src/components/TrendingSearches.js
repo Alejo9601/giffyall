@@ -37,8 +37,13 @@ const TrendingSearches = () => {
       <TrendingSearchesSection>
         <h1>Trending Gifs...</h1>
         <Wrapper>
-          {trendingSearches.map((trendingTerm) => {
-            return <TrendingTerm text={trendingTerm} />;
+          {trendingSearches.map((trendingTerm, index) => {
+            return (
+              <TrendingTerm
+                key={trendingTerm.concat(index)}
+                text={trendingTerm}
+              />
+            );
           })}
         </Wrapper>
       </TrendingSearchesSection>
