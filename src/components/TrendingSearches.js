@@ -5,16 +5,16 @@ import styled from "styled-components";
 const StyledDiv = styled.div`
   display: flex;
   justify-content: center;
+  margin-top: 50px;
 `;
 
 const TrendingSearchesSection = styled.section`
   display: flex;
   flex-direction: column;
-  margin: 50px auto 0 auto;
 
   h1 {
     color: white;
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
 
