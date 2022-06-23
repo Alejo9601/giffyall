@@ -43,6 +43,7 @@ const SearchBar = () => {
       return;
     }
     navigation(`/search/${value}`);
+    inputRef.current.value = "";
   };
 
   return (
