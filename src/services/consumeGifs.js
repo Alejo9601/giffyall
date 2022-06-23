@@ -7,7 +7,6 @@ const getGifs = (termToSearch, osffsetParam) => {
   const rating = "&rating=g";
   const lang = "&lang=en";
   const url = baseUrl + apiKey + toSearch + limit + offset + rating + lang;
-  console.log(url);
   return fetch(url)
     .then((res) => {
       return res.ok

@@ -2,10 +2,6 @@ import { useEffect } from "react";
 import Gif from "./Gif";
 
 const GifsRender = ({ gifs }) => {
-  useEffect(() => {
-    console.log(gifs);
-  }, [gifs]);
-
   return (
     <>
       {gifs.map((gif) => {

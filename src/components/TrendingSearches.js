@@ -24,10 +24,6 @@ const Wrapper = styled.div`
 const TrendingSearches = () => {
   const { trendingSearches } = useTrendingSearches();
 
-  useEffect(() => {
-    console.log(trendingSearches);
-  }, [trendingSearches]);
-
   return (
     <TrendingSearchesSection>
       <h1>Trending Gifs...</h1>
