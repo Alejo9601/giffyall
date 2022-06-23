@@ -7,7 +7,7 @@ body {
   display: flex;
   min-height: 100vh;
   overflow-x: hidden;
-  background-color: #5b4b8a;
+  background-color: black;
 }
 
 #root {

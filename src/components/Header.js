@@ -12,7 +12,7 @@ const HomeTitle = styled(Link)`
   font-size: 5rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-style: italic;
-  text-shadow: -3px 3px black;
+  text-shadow: -2px 2px 1px lightgray;
   margin-top: 30px;
   font-weight: bolder;
   text-decoration: none;
