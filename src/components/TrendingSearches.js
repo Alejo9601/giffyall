@@ -6,6 +6,10 @@ const StyledDiv = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 50px;
+
+  @media (min-width: 1366px) {
+    justify-content: flex-start;
+  }
 `;
 
 const TrendingSearchesSection = styled.section`
@@ -19,7 +23,6 @@ const TrendingSearchesSection = styled.section`
   }
 
   @media (min-width: 1366px) {
-    justify-content: flex-start;
     position: fixed;
   }
 `;
@@ -34,7 +37,7 @@ const Wrapper = styled.div`
   }
 
   @media (min-width: 1366px) {
-    width: 300px;
+    width: 320px;
   }
 `;
 

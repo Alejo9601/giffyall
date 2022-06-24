@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Gif from "./Gif";
 
 const GifsRender = ({ gifs }) => {
