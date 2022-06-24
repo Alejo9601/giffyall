@@ -19,6 +19,7 @@ const TrendingSearchesSection = styled.section`
   }
 
   @media (min-width: 1366px) {
+    justify-content: flex-start;
     position: fixed;
   }
 `;
@@ -27,6 +28,14 @@ const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 350px;
+
+  @media (min-width: 800px) {
+    width: 760px;
+  }
+
+  @media (min-width: 1366px) {
+    width: 300px;
+  }
 `;
 
 const TrendingSearches = () => {
