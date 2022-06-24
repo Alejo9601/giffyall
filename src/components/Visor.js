@@ -12,7 +12,7 @@ const TopBottomVisor = styled.div`
   @media (min-width: 800px) {
     grid-column: span 2;
   }
-  @media (min-width: 1366px) {
+  @media (min-width: 1600px) {
     grid-column: span 3;
   }
 `;

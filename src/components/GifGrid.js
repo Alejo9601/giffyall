@@ -15,7 +15,7 @@ const GifsSection = styled.section`
     grid-template-columns: 400px 400px;
   }
 
-  @media (min-width: 1366px) {
+  @media (min-width: 1600px) {
     grid-template-columns: 400px 400px 400px;
   }
 `;
