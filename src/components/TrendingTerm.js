@@ -9,6 +9,10 @@ const StyledDiv = styled.div`
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding: 0px 8px;
 
+  :hover {
+    transform: scale(1.05);
+  }
+
   a {
     display: block;
     text-decoration: none;
