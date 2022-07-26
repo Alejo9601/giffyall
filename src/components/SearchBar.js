@@ -43,6 +43,7 @@ const SearchBar = () => {
       return;
     }
     navigation(`/search/${value}`);
+    document.activeElement?.blur();
     inputRef.current.value = "";
   };
 
