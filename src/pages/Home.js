@@ -1,28 +1,14 @@
 import GifGrid from "../components/GifGrid";
 import TrendingSearches from "../components/TrendingSearches";
-import styled from "styled-components";
-
-const HomeSection = styled.section`
-  display: grid;
-
-  @media (min-width: 1366px) {
-    grid-template-columns: 1.5fr 3fr;
-    align-self: center;
-  }
-
-  @media (min-width: 1600px) {
-    grid-template-columns: 1fr 3fr;
-    align-self: center;
-  }
-`;
+import { CommonWrapper } from "../layouts/CommonWrapper";
 
 const Home = () => {
-  return (
-    <HomeSection>
-      <TrendingSearches />
-      <GifGrid />
-    </HomeSection>
-  );
+   return (
+      <CommonWrapper>
+         <TrendingSearches />
+         <GifGrid />
+      </CommonWrapper>
+   );
 };
 
 export default Home;
