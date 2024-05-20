@@ -3,64 +3,66 @@ import TrendingTerm from "./TrendingTerm";
 import styled from "styled-components";
 
 const StyledDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
+   display: flex;
+   justify-content: center;
+   margin-top: 50px;
 
-  @media (min-width: 1366px) {
-    justify-content: flex-start;
-  }
+   @media (min-width: 1366px) {
+      justify-content: flex-start;
+   }
 `;
 
 const TrendingSearchesSection = styled.section`
-  display: flex;
-  flex-direction: column;
+   display: flex;
+   flex-direction: column;
+   height: fit-content;
 
-  h1 {
-    color: white;
-    font-size: 2.5rem;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  }
+   h1 {
+      color: white;
+      font-size: 2.5rem;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   }
 
-  @media (min-width: 1366px) {
-    position: fixed;
-  }
+   @media (min-width: 1366px) {
+      position: sticky;
+      top: 20px;
+   }
 `;
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  width: 350px;
+   display: flex;
+   flex-wrap: wrap;
+   width: 350px;
 
-  @media (min-width: 800px) {
-    width: 760px;
-  }
+   @media (min-width: 800px) {
+      width: 760px;
+   }
 
-  @media (min-width: 1366px) {
-    width: 320px;
-  }
+   @media (min-width: 1366px) {
+      width: 320px;
+   }
 `;
 
 const TrendingSearches = () => {
-  const { trendingSearches } = useTrendingSearches();
+   const { trendingSearches } = useTrendingSearches();
 
-  return (
-    <StyledDiv>
-      <TrendingSearchesSection>
-        <h1>Trending Gifs...</h1>
-        <Wrapper>
-          {trendingSearches.map((trendingTerm, index) => {
-            return (
-              <TrendingTerm
-                key={trendingTerm.concat(index)}
-                text={trendingTerm}
-              />
-            );
-          })}
-        </Wrapper>
-      </TrendingSearchesSection>
-    </StyledDiv>
-  );
+   return (
+      <StyledDiv>
+         <TrendingSearchesSection>
+            <h1>Trending Gifs...</h1>
+            <Wrapper>
+               {trendingSearches.map((trendingTerm, index) => {
+                  return (
+                     <TrendingTerm
+                        key={trendingTerm.concat(index)}
+                        text={trendingTerm}
+                     />
+                  );
+               })}
+            </Wrapper>
+         </TrendingSearchesSection>
+      </StyledDiv>
+   );
 };
 
 export default TrendingSearches;
