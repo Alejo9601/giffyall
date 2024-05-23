@@ -18,7 +18,6 @@ function App() {
       <BrowserRouter>
          <GifsContextProvider>
             <GifApp>
-               <Header />
                <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/home" element={<Home />} />

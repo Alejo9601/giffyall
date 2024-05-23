@@ -1,14 +1,16 @@
 import GifGrid from "../components/GifGrid";
-import Header from "../components/Header";
 import TrendingSearches from "../components/TrendingSearches";
 import { GifsResultDetailWrapper } from "../layouts/GifsResultsDetailWrapper";
+import WithHeaderLayout from "../layouts/WithHeaderLayout";
 
 const Home = () => {
    return (
-      <GifsResultDetailWrapper>
-         <TrendingSearches />
-         <GifGrid />
-      </GifsResultDetailWrapper>
+      <WithHeaderLayout>
+         <GifsResultDetailWrapper>
+            <TrendingSearches />
+            <GifGrid />
+         </GifsResultDetailWrapper>
+      </WithHeaderLayout>
    );
 };
 

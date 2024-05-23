@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Loader from "../components/Loader";
 import useSingleGif from "../hooks/useSingleGif";
 import { GifsResultDetailWrapper } from "../layouts/GifsResultsDetailWrapper";
+import WithHeaderLayout from "../layouts/WithHeaderLayout";
 
 const DetailSection = styled.section`
    flex-grow: 1;
@@ -32,18 +33,20 @@ const GifDetail = () => {
    const gif = useSingleGif(gifId);
 
    return (
-      <DetailSection>
-         <Wrapper>
-            {Object.keys(gif).length !== 0 ? (
-               <Figure>
-                  <img src={gif.images.downsized_medium.url} />
-                  <figcaption>{gif.title}</figcaption>
-               </Figure>
-            ) : (
-               <Loader />
-            )}
-         </Wrapper>
-      </DetailSection>
+      <WithHeaderLayout>
+         <DetailSection>
+            <Wrapper>
+               {Object.keys(gif).length !== 0 ? (
+                  <Figure>
+                     <img src={gif.images.downsized_medium.url} />
+                     <figcaption>{gif.title}</figcaption>
+                  </Figure>
+               ) : (
+                  <Loader />
+               )}
+            </Wrapper>
+         </DetailSection>
+      </WithHeaderLayout>
    );
 };
 
