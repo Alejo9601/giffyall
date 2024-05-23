@@ -2,7 +2,7 @@ import { useUser } from "../hooks/useUser";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
-import GenericInput from "../components/GenericInput";
+import FormInput from "../components/FormInput";
 import FormSubmitButton from "../components/FormSubmitButton";
 
 const StyledSection = styled.section`
@@ -56,20 +56,20 @@ const Login = () => {
          <StyledHeading />
          <FormContainer>
             <StyledForm onSubmit={handleLogin}>
-               <GenericInput
+               <FormInput
                   label="Username"
                   name="username"
                   placeholder="Alejo9601"
                   type="text"
                   valueRef={usernameRef}
-               ></GenericInput>
-               <GenericInput
+               ></FormInput>
+               <FormInput
                   label="Password"
                   name="password"
                   placeholder="**********"
                   type="password"
                   valueRef={passwordRef}
-               ></GenericInput>
+               ></FormInput>
                <FormSubmitButton textValue="Login" />
             </StyledForm>
          </FormContainer>

@@ -14,7 +14,7 @@ const StyledLabel = styled.label`
    margin-top: 8px;
 `;
 
-export default function GenericInput({
+export default function FormInput({
    valueRef,
    type,
    name,
