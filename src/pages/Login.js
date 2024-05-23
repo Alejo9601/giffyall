@@ -2,6 +2,7 @@ import { useUser } from "../hooks/useUser";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
+import GenericInput from "../components/GenericInput";
 
 const StyledSection = styled.section`
    display: flex;
@@ -35,20 +36,6 @@ const StyledForm = styled.form`
    height: 300px;
 `;
 
-const StyledInput = styled.input`
-   width: 100%;
-   height: 40px;
-   padding: 10px 0px 10px 0px;
-   border-radius: 8px;
-   padding: 0px 20px 0px 20px;
-   background-color: beige;
-`;
-
-const StyledLabel = styled.label`
-   width: 100%;
-   margin-top: 8px;
-`;
-
 const StyledSubmitButton = styled.input`
    color: white;
    margin-top: 30px;
@@ -79,24 +66,20 @@ const Login = () => {
          <StyledHeading />
          <FormContainer>
             <StyledForm onSubmit={handleLogin}>
-               <StyledLabel htmlFor="username">
-                  Username
-                  <StyledInput
-                     ref={usernameRef}
-                     type="text"
-                     name="username"
-                     placeholder="alejo9601"
-                  />
-               </StyledLabel>
-               <StyledLabel htmlFor="password">
-                  Password
-                  <StyledInput
-                     ref={passwordRef}
-                     type="password"
-                     name="password"
-                     placeholder="***********"
-                  />
-               </StyledLabel>
+               <GenericInput
+                  label="Username"
+                  name="username"
+                  placeholder="Alejo9601"
+                  type="text"
+                  valueRef={usernameRef}
+               ></GenericInput>
+               <GenericInput
+                  label="Password"
+                  name="password"
+                  placeholder="**********"
+                  type="password"
+                  valueRef={passwordRef}
+               ></GenericInput>
                <StyledSubmitButton type="submit" value="Login" />
             </StyledForm>
          </FormContainer>
