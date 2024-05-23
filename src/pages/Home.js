@@ -1,15 +1,15 @@
 import GifGrid from "../components/GifGrid";
 import TrendingSearches from "../components/TrendingSearches";
-import { GifsResultDetailWrapper } from "../layouts/GifsResultsDetailWrapper";
+import { GifsListWrapper } from "../layouts/GifsListWrapper";
 import WithHeaderLayout from "../layouts/WithHeaderLayout";
 
 const Home = () => {
    return (
       <WithHeaderLayout>
-         <GifsResultDetailWrapper>
+         <GifsListWrapper>
             <TrendingSearches />
             <GifGrid />
-         </GifsResultDetailWrapper>
+         </GifsListWrapper>
       </WithHeaderLayout>
    );
 };

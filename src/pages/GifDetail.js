@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import Loader from "../components/Loader";
 import useSingleGif from "../hooks/useSingleGif";
-import { GifsResultDetailWrapper } from "../layouts/GifsResultsDetailWrapper";
+import { GifsListWrapper } from "../layouts/GifsListWrapper";
 import WithHeaderLayout from "../layouts/WithHeaderLayout";
 
 const DetailSection = styled.section`

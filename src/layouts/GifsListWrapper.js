@@ -15,6 +15,6 @@ const ResultsSection = styled.section`
    }
 `;
 
-export function GifsResultDetailWrapper({ children }) {
+export function GifsListWrapper({ children }) {
    return <ResultsSection>{children}</ResultsSection>;
 }
