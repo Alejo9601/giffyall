@@ -1,16 +1,16 @@
 import { useParams } from "react-router-dom";
 import GifGrid from "../components/GifGrid";
 import TrendingSearches from "../components/TrendingSearches";
-import { CommonWrapper } from "../layouts/CommonWrapper";
+import { GifsResultDetailWrapper } from "../layouts/GifsResultsDetailWrapper";
 
 const SearchResults = () => {
    const { term } = useParams();
 
    return (
-      <CommonWrapper>
+      <GifsResultDetailWrapper>
          <TrendingSearches />
          <GifGrid gifsFor={term} />
-      </CommonWrapper>
+      </GifsResultDetailWrapper>
    );
 };
 
