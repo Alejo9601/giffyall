@@ -1,15 +1,21 @@
 * {
-  margin: 0px;
-  padding: 0px;
+   margin: 0px;
+   padding: 0px;
+   box-sizing: border-box;
+}
+
+input {
+   outline: none;
+   border: 0;
 }
 
 body {
-  display: flex;
-  min-height: 100vh;
-  overflow-x: hidden;
-  background-color: black;
+   display: flex;
+   min-height: 100vh;
+   overflow-x: hidden;
+   background-color: black;
 }
 
 #root {
-  display: inherit;
+   display: inherit;
 }
