@@ -44,7 +44,7 @@ const StyledInput = styled.input`
    background-color: beige;
 `;
 
-const SytledLabel = styled.label`
+const StyledLabel = styled.label`
    width: 100%;
    margin-top: 8px;
 `;
@@ -79,7 +79,7 @@ const Login = () => {
          <StyledHeading />
          <FormContainer>
             <StyledForm onSubmit={handleLogin}>
-               <SytledLabel htmlFor="username">
+               <StyledLabel htmlFor="username">
                   Username
                   <StyledInput
                      ref={usernameRef}
@@ -87,8 +87,8 @@ const Login = () => {
                      name="username"
                      placeholder="alejo9601"
                   />
-               </SytledLabel>
-               <SytledLabel htmlFor="password">
+               </StyledLabel>
+               <StyledLabel htmlFor="password">
                   Password
                   <StyledInput
                      ref={passwordRef}
@@ -96,7 +96,7 @@ const Login = () => {
                      name="password"
                      placeholder="***********"
                   />
-               </SytledLabel>
+               </StyledLabel>
                <StyledSubmitButton type="submit" value="Login" />
             </StyledForm>
          </FormContainer>

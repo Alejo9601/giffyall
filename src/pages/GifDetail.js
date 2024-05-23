@@ -32,20 +32,18 @@ const GifDetail = () => {
    const gif = useSingleGif(gifId);
 
    return (
-      <GifsResultDetailWrapper>
-         <DetailSection>
-            <Wrapper>
-               {Object.keys(gif).length !== 0 ? (
-                  <Figure>
-                     <img src={gif.images.downsized_medium.url} />
-                     <figcaption>{gif.title}</figcaption>
-                  </Figure>
-               ) : (
-                  <Loader />
-               )}
-            </Wrapper>
-         </DetailSection>
-      </GifsResultDetailWrapper>
+      <DetailSection>
+         <Wrapper>
+            {Object.keys(gif).length !== 0 ? (
+               <Figure>
+                  <img src={gif.images.downsized_medium.url} />
+                  <figcaption>{gif.title}</figcaption>
+               </Figure>
+            ) : (
+               <Loader />
+            )}
+         </Wrapper>
+      </DetailSection>
    );
 };
 

@@ -5,13 +5,10 @@ import { GifsResultDetailWrapper } from "../layouts/GifsResultsDetailWrapper";
 
 const Home = () => {
    return (
-      <>
-         <Header></Header>
-         <GifsResultDetailWrapper>
-            <TrendingSearches />
-            <GifGrid />
-         </GifsResultDetailWrapper>
-      </>
+      <GifsResultDetailWrapper>
+         <TrendingSearches />
+         <GifGrid />
+      </GifsResultDetailWrapper>
    );
 };
 
