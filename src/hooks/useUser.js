@@ -22,8 +22,7 @@ export function useUser() {
    }
 
    function logout(username, password) {
-      const user = { username, password };
-      requestUserValidation(user);
+      //logout logic here
    }
 
    return { login, logout, userName, userToken };
