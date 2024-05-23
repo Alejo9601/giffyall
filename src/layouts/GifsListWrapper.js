@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Header from "../components/Header";
 
 const ResultsSection = styled.section`
    display: grid;

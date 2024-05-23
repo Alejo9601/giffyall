@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SearchResults from "./pages/SearchResults";
 import GifDetail from "./pages/GifDetail";
-import Header from "./components/Header";
 import { GifsContextProvider } from "./context/GifsContext";
 
 const GifApp = styled.div`
