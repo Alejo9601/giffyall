@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import Loader from "../components/Loader";
 import useSingleGif from "../hooks/useSingleGif";
-import { GifsListWrapper } from "../layouts/GifsListWrapper";
 import WithHeaderLayout from "../layouts/WithHeaderLayout";
 
 const DetailSection = styled.section`
@@ -38,7 +37,7 @@ const GifDetail = () => {
             <Wrapper>
                {Object.keys(gif).length !== 0 ? (
                   <Figure>
-                     <img src={gif.images.downsized_medium.url} />
+                     <img src={gif.images.downsized_medium.url} alt="Gif" />
                      <figcaption>{gif.title}</figcaption>
                   </Figure>
                ) : (
