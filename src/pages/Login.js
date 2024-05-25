@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 import FormInput from "../components/FormInput";
 import FormSubmitButton from "../components/FormSubmitButton";
+import FormButton from "../components/FormButton";
 
 const StyledSection = styled.section`
    display: flex;
@@ -20,6 +21,7 @@ const FormContainer = styled.div`
    display: flex;
    background-color: white;
    border-radius: 8px;
+   padding: 15px 0px 15px 0px;
 `;
 
 const StyledHeading = styled.h1`
@@ -37,6 +39,13 @@ const StyledForm = styled.form`
    height: 300px;
 `;
 
+const ButtonsContainer = styled.div`
+   width: 100%;
+   display: flex;
+   justify-content: end;
+   align-items: center;
+`;
+
 const Login = () => {
    const { login } = useUser();
    const passwordRef = useRef();
@@ -49,6 +58,10 @@ const Login = () => {
       if (login(usernameRef.current.value, passwordRef.current.value)) {
          navigation(`/home`);
       }
+   }
+
+   async function handleSignUp(ev) {
+      navigation(`/signup`, { replace: true });
    }
 
    return (
@@ -70,7 +83,10 @@ const Login = () => {
                   type="password"
                   valueRef={passwordRef}
                ></FormInput>
-               <FormSubmitButton textValue="Login" />
+               <ButtonsContainer>
+                  <FormButton textValue="Sign up" onClick={handleSignUp} />
+                  <FormSubmitButton textValue="Login" />
+               </ButtonsContainer>
             </StyledForm>
          </FormContainer>
       </StyledSection>
