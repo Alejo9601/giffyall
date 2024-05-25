@@ -23,6 +23,7 @@ const ButtonsContainer = styled.div`
    display: flex;
    justify-content: end;
    align-items: center;
+   gap: 10px;
 `;
 
 const Login = () => {
