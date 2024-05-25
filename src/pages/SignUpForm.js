@@ -8,23 +8,22 @@ export default function SignUpForm() {
    return (
       <UserLoginSignUp>
          <Form formName="Sign up ">
-            <FormInput label="Name" name="name" placeholder="" type="text" />
             <FormInput
-               label="Last Name"
-               name="lastname"
-               placeholder=""
+               label="Username"
+               name="username"
+               placeholder="we will identify you through your nick"
                type="text"
             />
             <FormInput
                label="Password"
                name="password"
-               placeholder="enter new password"
+               placeholder="think of a funny one"
                type="password"
             />
             <FormInput
                label="Repeat Password"
                name="password"
-               placeholder=""
+               placeholder="just to be sure"
                type="password"
             />
             <FormButtonsContainer>
