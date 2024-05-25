@@ -1,15 +1,8 @@
-import styled from "styled-components";
 import UserLoginSignUp from "../layouts/UserLoginSignUp";
 import FormInput from "../components/FormInput";
 import FormSubmitButton from "../components/FormSubmitButton";
 import Form from "../components/Form";
-
-const ButtonsContainer = styled.div`
-   width: 100%;
-   display: flex;
-   justify-content: end;
-   align-items: center;
-`;
+import FormButtonsContainer from "../components/FormButtonsContainer";
 
 export default function SignUpForm() {
    return (
@@ -34,9 +27,9 @@ export default function SignUpForm() {
                placeholder=""
                type="password"
             />
-            <ButtonsContainer>
+            <FormButtonsContainer>
                <FormSubmitButton textValue="Sign up" />
-            </ButtonsContainer>
+            </FormButtonsContainer>
          </Form>
       </UserLoginSignUp>
    );
