@@ -5,6 +5,7 @@ import { useRef } from "react";
 import FormInput from "../components/FormInput";
 import FormSubmitButton from "../components/FormSubmitButton";
 import FormButton from "../components/FormButton";
+import Form from "../components/Form";
 
 const StyledSection = styled.section`
    display: flex;
@@ -15,28 +16,6 @@ const StyledSection = styled.section`
    background-color: 000;
    height: 100%;
    width: 100%;
-`;
-
-const FormContainer = styled.div`
-   display: flex;
-   background-color: white;
-   border-radius: 8px;
-   padding: 15px 0px 15px 0px;
-`;
-
-const StyledHeading = styled.h1`
-   color: white;
-   font-size: 2rem;
-`;
-
-const StyledForm = styled.form`
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   margin: 15px;
-   width: 300px;
-   height: 300px;
 `;
 
 const ButtonsContainer = styled.div`
@@ -55,6 +34,8 @@ const Login = () => {
    async function handleLogin(ev) {
       ev.preventDefault();
 
+      alert("Voy a iniciar");
+
       if (login(usernameRef.current.value, passwordRef.current.value)) {
          navigation(`/home`);
       }
@@ -66,29 +47,26 @@ const Login = () => {
 
    return (
       <StyledSection>
-         <StyledHeading />
-         <FormContainer>
-            <StyledForm onSubmit={handleLogin}>
-               <FormInput
-                  label="Username"
-                  name="username"
-                  placeholder="Alejo9601"
-                  type="text"
-                  valueRef={usernameRef}
-               ></FormInput>
-               <FormInput
-                  label="Password"
-                  name="password"
-                  placeholder="**********"
-                  type="password"
-                  valueRef={passwordRef}
-               ></FormInput>
-               <ButtonsContainer>
-                  <FormButton textValue="Sign up" onClick={handleSignUp} />
-                  <FormSubmitButton textValue="Login" />
-               </ButtonsContainer>
-            </StyledForm>
-         </FormContainer>
+         <Form handleSubmit={handleLogin} formName="Login">
+            <FormInput
+               label="Username"
+               name="username"
+               placeholder="Alejo9601"
+               type="text"
+               valueRef={usernameRef}
+            ></FormInput>
+            <FormInput
+               label="Password"
+               name="password"
+               placeholder="**********"
+               type="password"
+               valueRef={passwordRef}
+            ></FormInput>
+            <ButtonsContainer>
+               <FormButton textValue="Sign up" onClick={handleSignUp} />
+               <FormSubmitButton textValue="Login" />
+            </ButtonsContainer>
+         </Form>
       </StyledSection>
    );
 };
