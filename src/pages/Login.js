@@ -34,9 +34,6 @@ const Login = () => {
 
    async function handleLogin(ev) {
       ev.preventDefault();
-
-      alert("Voy a iniciar");
-
       if (login(usernameRef.current.value, passwordRef.current.value)) {
          navigation(`/home`);
       }
