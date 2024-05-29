@@ -2,8 +2,8 @@ import { useState, createContext } from "react";
 
 export const UserContext = createContext("");
 
-export function UserContextProvider() {
-   const [userName, setUsername] = useState("");
+export function UserContextProvider({ children }) {
+   const [userName, setUsername] = useState("Not Logged");
    const [userToken, setUserToken] = useState("");
 
    const data = {
@@ -13,5 +13,5 @@ export function UserContextProvider() {
       setUserToken,
    };
 
-   return <UserContext.Provider value={data}></UserContext.Provider>;
+   return <UserContext.Provider value={data}>{children}</UserContext.Provider>;
 }
