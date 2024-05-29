@@ -7,6 +7,15 @@ const StyledInput = styled.input`
    border-radius: 8px;
    padding: 0px 20px 0px 20px;
    background-color: beige;
+   color: darkslateblue;
+   font-weight: bolder;
+   font-size: 1rem;
+
+   ::placeholder {
+      color: lightgray;
+      font-weight: 600;
+      font-size: 0.8rem;
+   }
 `;
 
 const StyledLabel = styled.label`
