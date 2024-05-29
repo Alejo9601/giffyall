@@ -6,6 +6,7 @@ import SearchResults from "./pages/SearchResults";
 import GifDetail from "./pages/GifDetail";
 import { GifsContextProvider } from "./context/GifsContext";
 import SignUpForm from "./pages/SignUpForm";
+import { UserContextProvider } from "./context/UserContext";
 
 const GifApp = styled.div`
    min-width: 100vw;
@@ -15,20 +16,22 @@ const GifApp = styled.div`
 
 function App() {
    return (
-      <BrowserRouter>
-         <GifsContextProvider>
-            <GifApp>
-               <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/home" element={<Home />} />
-                  <Route path="/login" element={<Login />} />
-                  <Route path="/signup" element={<SignUpForm />} />
-                  <Route path="/search/:term" element={<SearchResults />} />
-                  <Route path="/detail/:gifId" element={<GifDetail />} />
-               </Routes>
-            </GifApp>
-         </GifsContextProvider>
-      </BrowserRouter>
+      <UserContextProvider>
+         <BrowserRouter>
+            <GifsContextProvider>
+               <GifApp>
+                  <Routes>
+                     <Route path="/" element={<Home />} />
+                     <Route path="/home" element={<Home />} />
+                     <Route path="/login" element={<Login />} />
+                     <Route path="/signup" element={<SignUpForm />} />
+                     <Route path="/search/:term" element={<SearchResults />} />
+                     <Route path="/detail/:gifId" element={<GifDetail />} />
+                  </Routes>
+               </GifApp>
+            </GifsContextProvider>
+         </BrowserRouter>
+      </UserContextProvider>
    );
 }
 
