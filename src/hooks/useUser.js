@@ -11,12 +11,14 @@ export function useUser() {
       const userResponse = await requestUserValidation(user);
 
       if (userResponse.token === undefined) {
-         console.error("User couldn´t be validated");
+         console.error("User could not be validated");
          return false;
       }
 
       setUsername(userResponse.username);
       setUserToken(userResponse.token);
+
+      sessionStorage.setItem("userLogged", userResponse.username);
 
       return true;
    }
