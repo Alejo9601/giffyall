@@ -3,8 +3,8 @@ import { useState, createContext, useEffect } from "react";
 export const UserContext = createContext("");
 
 export function UserContextProvider({ children }) {
-   const [userName, setUsername] = useState("Not Logged");
-   const [userToken, setUserToken] = useState("");
+   const [userName, setUsername] = useState(null);
+   const [userToken, setUserToken] = useState(null);
 
    useEffect(() => {
       setUsername(sessionStorage.getItem("userLogged"));
