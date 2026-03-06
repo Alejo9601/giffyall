@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 
+const COLORS = ["#FBCB0A", "#C70A80", "#37E2D5"];
+
 const useRandomColor = () => {
   const [backgroundColor, setBackgroundColor] = useState();
-  const colors = ["#FBCB0A", "#C70A80", "#37E2D5"];
 
   useEffect(() => {
-    var rand = Math.floor(Math.random() * colors.length);
-    setBackgroundColor(colors[rand]);
+    const rand = Math.floor(Math.random() * COLORS.length);
+    setBackgroundColor(COLORS[rand]);
   }, []);
 
   return backgroundColor;

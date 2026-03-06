@@ -19,7 +19,7 @@ const TopBottomVisor = styled.div`
 
 const Visor = ({ toDoWhenReached }) => {
   const toObserve = useRef();
-  const [observer, setElements, entries] = useObserver({
+  const [, setElements, entries] = useObserver({
     rootMargin: "200px",
     root: null,
   });
@@ -27,7 +27,7 @@ const Visor = ({ toDoWhenReached }) => {
   useEffect(() => {
     const element = [toObserve.current];
     setElements(element);
-  }, []);
+  }, [setElements]);
 
   useEffect(() => {
     entries.forEach((entry) => {
@@ -35,7 +35,7 @@ const Visor = ({ toDoWhenReached }) => {
         toDoWhenReached();
       }
     });
-  }, [observer, entries]);
+  }, [entries, toDoWhenReached]);
 
   return (
     <TopBottomVisor ref={toObserve}>

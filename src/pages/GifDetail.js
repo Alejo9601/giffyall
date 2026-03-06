@@ -35,7 +35,7 @@ const GifDetail = () => {
       <Wrapper>
         {Object.keys(gif).length !== 0 ? (
           <Figure>
-            <img src={gif.images.downsized_medium.url} />
+            <img src={gif.images.downsized_medium.url} alt={gif.title || "Gif"} />
             <figcaption>{gif.title}</figcaption>
           </Figure>
         ) : (
