@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+﻿# Giffyall
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A learning project built with React + Create React App.
 
-## Available Scripts
+Giffyall is a small GIF browser that uses the GIPHY API to:
+- show trending GIF searches,
+- search GIFs by term,
+- render GIF cards,
+- navigate to a GIF detail view,
+- simulate a basic login state in session storage.
 
-In the project directory, you can run:
+## Tech Stack
+- React 18
+- React Router DOM 6
+- styled-components
+- Create React App (react-scripts 5)
 
-### `npm start`
+## Project Goals
+This repository is intentionally kept as a learning project.
+The focus is understanding React fundamentals (components, hooks, context, routing, async fetches), not production hardening.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Getting Started
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Prerequisites
+- Node.js 18+ (Node 20 works)
+- npm 8+
 
-### `npm test`
+### Install
+```bash
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Run in development
+```bash
+npm start
+```
+The app runs at `http://localhost:3000`.
 
-### `npm run build`
+If port 3000 is already in use:
+- stop the previous process using that port, or
+- run on another port:
+```powershell
+$env:PORT=3001; npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Build
+```bash
+npm run build
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Test
+```bash
+npm test
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## App Routes
+- `/` -> Home
+- `/home` -> Home
+- `/login` -> Login page
+- `/signup` -> Sign-up form UI
+- `/search/:term` -> Search results page
+- `/detail/:gifId` -> GIF detail page
 
-### `npm run eject`
+## Main Folders
+- `src/components` -> UI building blocks (Gif, Header, Loader, etc.)
+- `src/pages` -> page-level route components
+- `src/hooks` -> custom hooks (`useGifs`, `useSingleGif`, `useTrendingSearches`, etc.)
+- `src/services` -> API/service functions
+- `src/context` -> global state with React Context
+- `src/layouts` -> reusable page layouts
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Data Sources
+GIPHY public endpoints are used directly from the frontend (API key currently hardcoded in service files):
+- Trending searches
+- GIF search
+- Trending GIFs
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Authentication (Learning Stub)
+Login is mocked in `src/services/userServices.js`.
+It returns a static user/token and stores the username in `sessionStorage`.
+No real backend auth is implemented.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Known Limitations
+These are expected for this learning version:
+- Error handling around API failures is minimal.
+- Some React Hook dependency warnings are present.
+- Detail view depends on GIFs already loaded in context.
+- Sign-up page is currently UI-only.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Notes for Future Improvements
+If you later want to evolve this project:
+- move API key to environment variables (`.env`),
+- add robust loading/error/empty states,
+- add tests for hooks and routes,
+- improve detail fetching by requesting GIF by id when needed,
+- add a real auth backend.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Available Scripts (CRA)
+- `npm start` -> starts the dev server
+- `npm run build` -> creates production build in `build/`
+- `npm test` -> runs tests
+- `npm run eject` -> ejects CRA config (one-way)
