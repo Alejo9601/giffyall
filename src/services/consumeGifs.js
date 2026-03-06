@@ -1,5 +1,5 @@
 const getGifs = (termToSearch = null, osffsetParam) => {
-   const baseUrl = process.env.REACT_APP_BASE_URL;
+   const baseUrl = process.env.REACT_APP_BASE_URL + "/gifs";
    const searchEndpoint = "/search";
    const trendingEndpoint = "/trending";
    const apiKey = process.env.REACT_APP_API_KEY;
