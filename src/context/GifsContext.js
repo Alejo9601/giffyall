@@ -1,23 +1,26 @@
-import { createContext, useState } from "react";
+import { createContext, useCallback, useMemo, useState } from "react";
 
 const GifsContext = createContext();
 
 const GifsContextProvider = ({ children }) => {
   const [allGifs, setAllGifs] = useState([]);
 
-  const addNewGifs = (newGifs) => {
+  const addNewGifs = useCallback((newGifs) => {
     setAllGifs((currentGifs) => currentGifs.concat(newGifs));
-  };
+  }, []);
 
-  const cleanGifs = () => {
+  const cleanGifs = useCallback(() => {
     setAllGifs([]);
-  };
+  }, []);
 
-  const data = {
-    allGifs,
-    addNewGifs,
-    cleanGifs,
-  };
+  const data = useMemo(
+    () => ({
+      allGifs,
+      addNewGifs,
+      cleanGifs,
+    }),
+    [allGifs, addNewGifs, cleanGifs]
+  );
 
   return <GifsContext.Provider value={data}>{children}</GifsContext.Provider>;
 };
